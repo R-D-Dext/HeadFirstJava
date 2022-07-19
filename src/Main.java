@@ -2,33 +2,18 @@ import java.sql.SQLOutput;
 
 public class Main {
     public static void main(String[] args) {
-        Printer printer1 = new Printer("Вася");
-        Thread thread1 = new Thread(printer1);
-        thread1.start();
+        String[] a1 = {"far", "arf", "fra"};
+        String[] a2 = {"qaz", "qza", "aqz"};
+        String[] a3 = {"wer", "rew", "ewr"};
 
-        Printer printer2 = new Printer("Петя");
-        Thread thread2 = new Thread(printer2);
-        thread2.start();
+        int oneLenght = a1.length;
+        int twoLenght = a2.length;
+        int threeLenght = a3.length;
 
-        Printer printer3 = new Printer("Вика");
-        Thread thread3 = new Thread(printer3);
-        thread3.start();
+        int ran1 = (int) (Math.random() * oneLenght);
+        int ran2 = (int) (Math.random() * twoLenght);
+        int ran3 = (int) (Math.random() * threeLenght);
 
-        Thread thread4 = new Thread(printer3);
-        thread4.start();
-
-        Thread thread5 = new Thread(printer3);
-        thread5.start();
-    }
-}
-
-class Printer implements Runnable {
-    private String name;
-    public Printer(String name) {
-        this.name = name;
-    }
-
-    public void run() {
-        System.out.println("I'm " + this.name);
+        System.out.println(a1[ran1] + " " + a2[ran2] + " " + a3[ran3]);
     }
 }
